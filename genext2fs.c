@@ -1645,9 +1645,8 @@ prep_stat(const char *root_path)
 static void
 fix_stat(const char *path, struct stat *s)
 {
-	uint64_t capabilities;
 	path += source_path_len;
-	fs_config(path, S_ISDIR(s->st_mode), &s->st_uid, &s->st_gid, &s->st_mode, &capabilities);
+	fs_config(path, S_ISDIR(s->st_mode), &s->st_uid, &s->st_gid, &s->st_mode);
 }
 
 // adds a tree of entries to the filesystem from current dir
